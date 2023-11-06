@@ -1,0 +1,350 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: 'Roboto', sans-serif;
+}
+body {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+
+/* menu */
+
+menu{
+    display: flex;
+    background-color: #1d1d1d;
+    box-shadow: 0px 19px 19px -3px rgba(0,0,0,0.1);
+}
+
+.nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    width: 60%;
+}
+
+.nav>li{
+    padding: 2rem 2rem;
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+}
+li:hover{
+    cursor: pointer;
+}
+
+.selected{
+    background-color: #343434;
+}
+.user{
+    width: 40%;
+    height: 90px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.userWelcome{
+    width: 30%;
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.adminEdit{
+    width: 70%;
+    height: 90px;
+}
+
+.bxs-user{
+    color: white;
+    font-size: 27px;
+}
+
+#message{
+    color: white;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+
+
+
+
+
+
+
+/* Contenido */
+main{
+    flex: 1;
+}
+.login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#loginForm{
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#loginForm{
+    width: 50%;
+}
+
+#username{
+    width: 70%;
+    padding: 0.4rem 1rem;
+    border: 1px solid grey;
+    
+}
+
+#username:focus{
+    outline: none;
+    border:1px solid rgb(252, 198, 3);
+    box-shadow: 8px 10px 15px -3px rgba(0,0,0,0.1);
+}
+#password{
+    width: 70%;
+    padding: 0.4rem 1rem;
+    border: 1px solid grey;
+    
+}
+
+#password:focus{
+    outline: none;
+    border:1px solid rgb(252, 198, 3);
+    box-shadow: 8px 10px 15px -3px rgba(0,0,0,0.1);
+}
+
+.btnLogin{
+    width: 70%;
+    padding: 0.4rem 1rem;
+    background: rgb(255,188,0);
+    background: linear-gradient(90deg, rgba(255,188,0,1) 15%, rgba(237,207,6,1) 100%);
+    border: 2px solid white;
+    color: rgb(36, 36, 36);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.btnLogin:hover{
+    cursor: pointer;
+    background: white;
+    border: 2px solid rgb(252, 198, 3);
+    color: rgb(252, 198, 3);
+}
+
+
+
+#loginForm>input{
+    gap: 2rem;
+}
+
+#container{
+    height: auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+.separator{
+    height: 50px;
+    width: 100%;
+}
+.searcher{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#firstSearchBox{
+    width: 30%;
+}
+.firstSearch{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#searchContainer{
+    width: 50%;
+}
+
+
+.search{
+    display: flex;
+    flex-direction: column;
+    
+}
+.paintFilter, .textueFilter{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.selectedTwo{
+    padding: 1rem 3rem;
+    border: none;
+    border-radius: 0.3rem;
+    font-weight: 700;
+    font-size: 20px;
+    background-color: rgb(252, 190, 3);
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+}
+
+.selectedTexture{
+    padding: 1rem 2rem;
+    border: 2px solid white;
+    background-color: white;
+    color: rgb(252, 198, 3);
+    font-weight: 300;
+    font-size: 15px;
+    border-bottom: 2px solid rgb(252, 198, 3);
+}
+.btnMain{
+    padding: 1rem 3rem;
+    border: none;
+    border-radius: 0.3rem;
+    background-color: rgb(252, 198, 3);
+    color: rgb(35, 35, 35);
+    font-weight: 400;
+    font-size: 17px;
+}
+
+.btnMain:hover{
+    cursor: pointer;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+}
+
+
+.ColorFIlter, .textureTypeFilter{
+    display: flex;
+    justify-content: space-evenly;
+}
+.ColorFIlter>button{
+    border-radius: 7rem;
+    border: none;
+    padding: 1.2rem;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+}
+
+.btnTexture{
+    padding: 1rem 2rem;
+    border: 2px solid white;
+    background-color: white;
+    color: rgb(252, 198, 3);
+    font-weight: 300;
+    font-size: 15px;
+}
+
+.btnTexture:hover{
+    cursor: pointer;
+    border-bottom: 2px solid rgb(252, 198, 3);
+}
+
+
+.ColorFIlter/* >div */>button:hover{
+    cursor: pointer;
+}
+
+#btnRed{background-color: #d71616;}
+#btnPurple{background-color: #6d16d7;}
+#btnPink{background-color: #f42ae6;}
+#btnBlue{background-color: #0245ff;}
+#btnTurq{background-color: #0ed4e2;}
+#btnGreen{background-color: #09c725;}
+#btnYellow{background-color: #ffff00;}
+#btnOrange{background-color: #ff8000;}
+#btnFlesh{background-color: #eac8a6;}
+#btnBrown{background-color: #754c2b;}
+#btnBlack{background-color: #000000;}
+#btnGrey{background-color: #4b4b4b;}
+#btnWhite{background-color: #f1f1f1;}
+#btnMetal{background-color: #9d9e9f;}
+/* Tarjetas contenido */
+
+.card{
+    border: 0.5px solid gray;
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    border-radius: 1rem;
+    box-shadow: 7px -4px 15px -3px rgba(0,0,0,0.1);
+    
+}
+.separtorCard{
+    height: 20px;
+    width: 100%;
+}
+
+
+.colorImg{
+    max-width: 100%;
+    height: 70px;
+}
+
+.paintImg{
+    max-width: 100%;
+    height: auto;
+}
+
+.infoBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 150px;
+}
+
+.paintName, .textureName{
+    font-size: 25px;
+    font-weight: 700;
+    color: #1d1d1d;
+}
+
+.paintBrand, .textureBrand{
+    font-size: 20px;
+    font-weight: 400;
+    color: #313131;
+}
+.paintRange, .textureRange, .textureSize{
+    font-size: 20px;
+    font-weight: 300;
+    color: #313131;
+}
+.paintPrice, .texturePrice{
+    font-size: 20px;
+    font-weight: 100;
+    color: #484848;
+}
+
+.hide{
+    display: none;
+}
+
+
+footer {
+    background-color: #1d1d1d;
+    padding-top: 2rem;
+    min-height: 50%;
+}
+
+
