@@ -75,17 +75,11 @@ li:hover{
 }
 
 
-
-
-
-
-
-
 /* Contenido */
 main{
     flex: 1;
 }
-.login{
+.login {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -94,6 +88,14 @@ main{
     margin-left: auto;
     margin-right: auto;
 }
+.paintFormContainer{
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#formContainer{
+    height: 500px;
+}
 
 #loginForm{
     display: flex;
@@ -101,6 +103,26 @@ main{
     height: 200px;
     justify-content: space-evenly;
     align-items: center;
+}
+#paintForm{
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#paintForm>input{
+    width: 70%;
+    padding: 0.4rem 1rem;
+    border: 1px solid grey;
+}
+
+#paintForm>input:focus{
+    outline: none;
+    border:1px solid rgb(252, 198, 3);
+    box-shadow: 8px 10px 15px -3px rgba(0,0,0,0.1);
 }
 
 #loginForm{
@@ -144,6 +166,23 @@ main{
 }
 
 .btnLogin:hover{
+    cursor: pointer;
+    background: white;
+    border: 2px solid rgb(252, 198, 3);
+    color: rgb(252, 198, 3);
+}
+
+.btnAddPaint{
+    width: 30%;
+    padding: 0.4rem 1rem;
+    background: rgb(255,188,0);
+    background: linear-gradient(90deg, rgba(255,188,0,1) 15%, rgba(237,207,6,1) 100%);
+    border: 2px solid white;
+    color: rgb(36, 36, 36);
+    font-size: 20px;
+    font-weight: 700;
+}
+.btnAddPaint:hover{
     cursor: pointer;
     background: white;
     border: 2px solid rgb(252, 198, 3);

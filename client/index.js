@@ -216,6 +216,7 @@ document.addEventListener('userAuthenticated', function () {
       btnVallejoTexureBrand.classList.add('btnMain');
       btnAk.classList.remove('selectedTexture');
       btnAk.classList.add('btnMain');
+      paintFormBox.classList.add('hide');
       fetch('http://localhost:3000/api/pinturas', {
         method: 'GET',
         headers: headers,
@@ -240,6 +241,7 @@ document.addEventListener('userAuthenticated', function () {
       btnVallejoTexureBrand.classList.add('btnMain');
       btnAk.classList.remove('selectedTexture');
       btnAk.classList.add('btnMain');
+      paintFormBox.classList.add('hide');
       fetch('http://localhost:3000/api/pinturas', {
         method: 'GET',
         headers: headers,
@@ -265,6 +267,7 @@ document.addEventListener('userAuthenticated', function () {
       textureFilterBox.classList.remove('hide');
       searchContainer.classList.remove('hide');
       filterBox.classList.add('hide');
+      paintFormBox.classList.add('hide');
       fetch('http://localhost:3000/api/texturas', {
         method: 'GET',
         headers: headers,
@@ -289,6 +292,7 @@ document.addEventListener('userAuthenticated', function () {
       textureFilterBox.classList.remove('hide');
       searchContainer.classList.remove('hide');
       filterBox.classList.add('hide');
+      paintFormBox.classList.add('hide');
 
       fetch('http://localhost:3000/api/texturas', {
         method: 'GET',
@@ -392,6 +396,7 @@ document.addEventListener('userAuthenticated', function () {
       filterBox.classList.remove('hide');
       selectedBrand = brand;
       brandFilter(selectedBrand);
+      paintFormBox.classList.add('hide');
     }
 
     btnVallejoBrand.addEventListener('click', () =>
@@ -410,6 +415,7 @@ document.addEventListener('userAuthenticated', function () {
       TextureTypeBox.classList.remove('hide');
       selectedBrand = brand;
       texturebrandFilter(selectedBrand);
+      paintFormBox.classList.add('hide');
 
       const buttons = [btnGround, btnSnow, btnWater];
 
@@ -438,14 +444,17 @@ document.addEventListener('userAuthenticated', function () {
         if (button === this) {
           button.classList.remove('btnTexture');
           button.classList.add('selectedTexture');
+          paintFormBox.classList.add('hide');
         } else {
           button.classList.remove('selectedTexture');
           button.classList.add('btnTexture');
+          paintFormBox.classList.add('hide');
         }
       });
 
       if (selectedBrand) {
         textureFilter(selectedBrand, textureType)();
+        paintFormBox.classList.add('hide');
       }
     }
 
