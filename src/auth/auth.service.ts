@@ -16,6 +16,20 @@ export class AuthService {
     return null
     }   
 
+    async register(username: string, password: string): Promise<any> {
+        
+        const existingUser = await this.userService.findOne(username);
+        if (existingUser) {
+        
+        return { message: 'Username is already taken' };
+        }
+
+        const newUser = await this.userService.createUser(username, password);
+    
+        const { password: userPassword, ...result } = newUser;
+        return result;
+    }
+
     async login(user: any){
         const payload = {username: user.username, sub: user.userId}
         return{

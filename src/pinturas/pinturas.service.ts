@@ -8,11 +8,18 @@ import { query } from 'express';
 export class PinturasService {
     constructor (@InjectModel(pintura.name)private pinturasModel: Model<pinturaDocument>){}
 
+    async getPinturasRandom():Promise <pintura[]>{
+        return await this.pinturasModel.find()
+    }
     async getPinturas():Promise <pintura[]>{
         return await this.pinturasModel.find()
         
     }
     
+    async getPinturasByName(name: string):Promise <pintura[]>{
+        return await this.pinturasModel.find({name})
+        
+    }
     async getPinturasByBrand(brand: string):Promise <pintura[]>{
         return await this.pinturasModel.find({brand})
         

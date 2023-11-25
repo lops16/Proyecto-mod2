@@ -23,7 +23,7 @@ export class pintura {
     price: number
 
     @Prop()
-    colorImg: string
+    colorDisplay: string
 
 }
 export const PinturaSchema = SchemaFactory.createForClass(pintura)

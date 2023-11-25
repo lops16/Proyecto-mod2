@@ -7,11 +7,22 @@ import { JwtAuthGuard } from 'src/auth/jwt.strategy';
 export class PinturasController {
     constructor(private readonly pinturasService: PinturasService){}
     @Get()
+    /* @UseGuards(JwtAuthGuard) */
+    getPinturasRandom():any{
+        return this.pinturasService.getPinturas()
+    }
+    @Get("/all")
     @UseGuards(JwtAuthGuard)
     getPinturas():any{
         return this.pinturasService.getPinturas()
     }
     
+    @Get("/name")
+    @UseGuards(JwtAuthGuard)
+    getPinturasByName(@Param("name") name: string){
+
+        return this.pinturasService.getPinturasByName(name)
+    }
     @Get("/marca/:brand")
     @UseGuards(JwtAuthGuard)
     getPinturasByBrand(@Param("brand") brand: string){

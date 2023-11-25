@@ -22,5 +22,5 @@ export class PinturasDto {
     price: number
 
     @IsString()
-    colorImg: string
+    colorDisplay: string
 }
