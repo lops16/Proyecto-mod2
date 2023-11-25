@@ -122,9 +122,9 @@ document.addEventListener('userAuthenticated', function () {
           paintImg.className = 'paintImg';
           paintImg.src = pintura.img;
 
-          let colorPrev = document.createElement('img');
+          let colorPrev = document.createElement('div');
           colorPrev.className = 'colorImg';
-          colorPrev.src = pintura.colorImg;
+          colorPrev.style.background = pintura.colorDisplay;
 
           let infoBox = document.createElement('div');
           infoBox.className = 'infoBox';
