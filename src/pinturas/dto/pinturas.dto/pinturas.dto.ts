@@ -1,5 +1,5 @@
 
-import { IsInt, IsString, isString } from "class-validator"
+import { IsInt, IsString} from "class-validator"
 
 export class PinturasDto {
     @IsString()

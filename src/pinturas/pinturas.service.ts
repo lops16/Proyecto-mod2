@@ -1,20 +1,22 @@
 import { Injectable, ParseIntPipe } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { pintura, pinturaDocument } from './pintura.schema';
-import { Model } from 'mongoose';
-import { query } from 'express';
+import { Model} from 'mongoose';
+
+
 
 @Injectable()
 export class PinturasService {
     constructor (@InjectModel(pintura.name)private pinturasModel: Model<pinturaDocument>){}
 
-    async getPinturasRandom():Promise <pintura[]>{
-        return await this.pinturasModel.find()
+    async getPinturasFav(favs:string[]):Promise <pintura[]>{
+        return await this.pinturasModel.find({ _id: { $in: favs } })
     }
     async getPinturas():Promise <pintura[]>{
         return await this.pinturasModel.find()
         
     }
+
     
     async getPinturasByName(name: string):Promise <pintura[]>{
         return await this.pinturasModel.find({name})
@@ -22,6 +24,10 @@ export class PinturasService {
     }
     async getPinturasByBrand(brand: string):Promise <pintura[]>{
         return await this.pinturasModel.find({brand})
+        
+    }
+    async getPinturasByColor(color: string):Promise <pintura[]>{
+        return await this.pinturasModel.find({color})
         
     }
     async getPinturasByBrandColor(brand: string, color:string):Promise <pintura[]>{

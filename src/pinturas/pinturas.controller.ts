@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, ParseIntPipe, Post, Put, Query, Res, UseGuards } from '@nestjs/common';
+import { Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, ParseIntPipe, Post, Put, Query, Req, Res, UseGuards } from '@nestjs/common';
 import { PinturasService } from './pinturas.service';
 import { PinturasDto } from './dto/pinturas.dto/pinturas.dto';
 import { JwtAuthGuard } from 'src/auth/jwt.strategy';
@@ -6,16 +6,17 @@ import { JwtAuthGuard } from 'src/auth/jwt.strategy';
 @Controller('pinturas')
 export class PinturasController {
     constructor(private readonly pinturasService: PinturasService){}
+    @Post("/fav")
+    @UseGuards(JwtAuthGuard)
+    getPinturasFav(@Body('paint') favPaints: string[]):any{
+        return this.pinturasService.getPinturasFav(favPaints)
+    }
     @Get()
     /* @UseGuards(JwtAuthGuard) */
-    getPinturasRandom():any{
-        return this.pinturasService.getPinturas()
-    }
-    @Get("/all")
-    @UseGuards(JwtAuthGuard)
     getPinturas():any{
         return this.pinturasService.getPinturas()
     }
+
     
     @Get("/name")
     @UseGuards(JwtAuthGuard)
@@ -30,6 +31,12 @@ export class PinturasController {
         return this.pinturasService.getPinturasByBrand(brand)
     }
 
+    @Get("/color/:color")
+    @UseGuards(JwtAuthGuard)
+    getPinturasByColor(@Param("color") color: string) {
+    return this.pinturasService.getPinturasByColor(color);
+}
+
     @Get("/marcaycolor/:brand/:color")
     @UseGuards(JwtAuthGuard)
     getPinturasByBrandColor(@Param("brand") brand: string, @Param("color") color: string){
@@ -39,9 +46,10 @@ export class PinturasController {
     
     @Post('/new')
 @UseGuards(JwtAuthGuard)
-newPintura(@Body() body: PinturasDto, @Res() res: any): Promise<void> {
+newPintura(@Body() body: any, @Res() res: any): Promise<void> {
     if (body) {
         const newPaint = this.pinturasService.newPintura(body)
+        console.log("Received body:", body);
         return res.status(HttpStatus.CREATED).send(newPaint)
         
         
